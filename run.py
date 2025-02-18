@@ -33,7 +33,7 @@ y = df['species'].to_numpy()
 assert X.shape == (333, 4)
 assert y.shape == (333, )
 
-X = pp.standardScaler(X)
+X = pp.standardScaler(X) # This is technically wrong, as you should scaled the data after the split to prevent from data leakage.
 
 X_train, y_train, X_test, y_test, X_val, y_val = pp.split(X, y)
 
